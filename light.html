@@ -23,18 +23,7 @@
       --shadow:0 6px 18px rgba(31,42,68,.08);
       --radius:16px;
     }
-    /* --- Fix iconos en pills (modo oscuro y claro) --- */
-    .pill{
-      color:#cfe1ff;                   /* color del texto e icono */
-      background:#111a2b;              /* fondo legible en dark */
-      border:1px solid #2a3d66;
-    }
-
-    /* Fuerza que los SVG hereden el color del texto */
-    .pill svg, .pill svg *{
-      fill: currentColor !important;
-      stroke: currentColor !important; /* por si algún icono es de trazo */
-    }
+    
     /* ===== Reset mínimo ===== */
     *{box-sizing:border-box}
     html,body{margin:0; padding:0}
@@ -105,6 +94,19 @@
       background:#EAF6FF; border:1px solid #D9ECFF; margin:4px 6px 0 0; font-size:.92rem; color:#1257B8
     }
     .pill svg{width:16px;height:16px}
+
+    /* --- Fix iconos en pills (modo oscuro y claro) --- */
+    .pill{
+      color:#cfe1ff;                   /* color del texto e icono */
+      background:#111a2b;              /* fondo legible en dark */
+      border:1px solid #2a3d66;
+    }
+
+    /* Fuerza que los SVG hereden el color del texto */
+    .pill svg, .pill svg *{
+      fill: currentColor !important;
+      stroke: currentColor !important; /* por si algún icono es de trazo */
+    }
 
     /* ===== Tablas ===== */
     .table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:12px; border:1px solid var(--line)}
