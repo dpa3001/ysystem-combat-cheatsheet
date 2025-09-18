@@ -55,6 +55,19 @@
     .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#111733; border:1px solid #26306a; margin:4px 6px 0 0; font-size:.92rem}
     .pill svg{width:18px;height:18px}
 
+    /* --- Fix iconos en pills (modo oscuro y claro) --- */
+    .pill{
+      color:#cfe1ff;                   /* color del texto e icono */
+      background:#111a2b;              /* fondo legible en dark */
+      border:1px solid #2a3d66;
+    }
+
+    /* Fuerza que los SVG hereden el color del texto */
+    .pill svg, .pill svg *{
+      fill: currentColor !important;
+      stroke: currentColor !important; /* por si algún icono es de trazo */
+    }
+
     .table{
       width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid #2b3569
     }
