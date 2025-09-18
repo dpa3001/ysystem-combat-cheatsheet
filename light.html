@@ -135,16 +135,26 @@
       header{flex-direction:column; align-items:flex-start}
     }
 
-    .switch-btn{
-      display:inline-flex; align-items:center; gap:10px;
-      background:#111; color:#ffed6a; border:3px solid #000;
-      padding:10px 16px; border-radius:10px; font-size:1rem; cursor:pointer;
-      box-shadow:0 4px 0 #000; transform:skew(-2deg); transition:filter .2s;
+    .comic-btn {
+      background: #ffdd57;
+      color: #2b2b2b;
+      border: 2px solid #000;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 #000;
+      transition: all 0.2s;
+      font-family: "Comic Sans MS", "Chalkboard SE", cursive; /* toque cartoon */
     }
-    .switch-btn:hover{ filter:brightness(1.1) }
 
-    .icon{ width:1.15em; height:1.15em; display:inline-block }
-    .icon *{ fill:currentColor; stroke:currentColor; stroke-width:0 }
+  .comic-btn:hover {
+      background: #ffe784;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 #000;
+  }
+
 
   </style>
 </head>
@@ -160,12 +170,9 @@
         <div class="subtitle">Resumen visual de tiradas, orden de acciones, cálculo de daño y uso de dados extra.</div>
       </div>
       <div>
-          <button onclick="window.location.href='comic.html'" class="switch-btn" aria-label="Modo Cómic">
-            <svg class="icon icon-comic-bubble" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 4h14a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6l-5 4v-4H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/>
-          </svg>
-          Modo Cómic
-        </button>
+           <button onclick="window.location.href='comic.html'" class="comic-btn">
+            💬 Modo Cómic
+           </button>
       </div>
     </header>
 
