@@ -121,6 +121,22 @@
       .flow{flex-direction:column}
       header{flex-direction:column; align-items:flex-start}
     }
+
+    .switch-btn {
+  background: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  margin-left: auto;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.switch-btn:hover {
+  background: #000000;
+}
+
   </style>
 </head>
 <body>
@@ -133,6 +149,9 @@
       <div>
         <h1>Infografía de Combate — YSystem</h1>
         <div class="subtitle">Resumen visual de tiradas, orden de acciones, cálculo de daño y uso de dados extra.</div>
+      </div>
+      <div>
+        <button onclick="window.location.href='index.html'" class="switch-btn">🌙 Modo Oscuro </button>
       </div>
     </header>
 
