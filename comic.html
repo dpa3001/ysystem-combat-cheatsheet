@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Infografía de Combate — YSystem (Cartoon)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Infografía visual y profesional del sistema de combate en YSystem en estilo cartoon.">
+  <!-- Fuentes estilo cómic -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Paleta cartoon viva */
+      --bg: #0b0f1a;
+      --bg-dot: rgba(255,255,255,.04);
+      --panel: #ffffff;
+      --panel-ink: #222;
+      --panel-border: #111;
+      --ink:#f8fbff;
+      --muted:#c9d2ff;
+      --accent:#ffda3a;      /* Amarillo superhéroe */
+      --accent-2:#39e58c;    /* Verde punch */
+      --accent-3:#5aa8ff;    /* Azul eléctrico */
+      --danger:#ff4d6d;
+      --ok:#41ef9b;
+      --warn:#ffc857;
+      --shadow: 0 14px 30px rgba(0,0,0,.45), 0 2px 0 #000;
+      --radius: 18px;
+    }
+
+    /* Reset mínimo */
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0}
+    body{
+      background:
+        radial-gradient(circle at 12px 12px, var(--bg-dot) 2px, transparent 3px) 0 0/22px 22px,
+        linear-gradient(180deg, #0b0f1a 0%, #0e1426 100%);
+      color:var(--ink);
+      font-family: Nunito, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
+      line-height:1.5;
+    }
+
+    .wrap{max-width:1200px; margin:40px auto; padding:0 20px}
+
+    /* Encabezado con explosión */
+    header{
+      display:flex; gap:18px; align-items:center; margin-bottom:26px; position:relative;
+      padding:16px 18px;
+    }
+    header::before{
+      content:"";
+      position:absolute; inset:-12px -12px auto auto; height:120px; width:120px;
+      background:
+        radial-gradient(circle at 50% 50%, #ffd84a 0 52%, #ffb703 52% 58%, transparent 60%),
+        conic-gradient(from 0deg, #ffb703 0 20%, transparent 20% 40%, #ffb703 40% 60%, transparent 60% 80%, #ffb703 80% 100%);
+      filter: drop-shadow(0 6px 0 #000);
+      border-radius:50%;
+      opacity:.12;
+      right:-10px; top:-10px;
+      pointer-events:none;
+    }
+
+    .logo{
+      width:66px; height:66px; border-radius:50%;
+      display:grid; place-items:center;
+      background: radial-gradient(circle at 30% 30%, #ffed6a, #ffb703 70%);
+      border:4px solid #000; box-shadow: var(--shadow);
+      transform: rotate(-4deg);
+    }
+    .logo svg{width:34px; height:34px; fill:#111}
+
+    h1{
+      font-family: Bangers, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: clamp(32px, 6vw, 64px);
+      letter-spacing:.5px; margin:0;
+      color:#111; text-shadow: 0 3px 0 #ffed6a, 0 6px 0 #000;
+      display:inline-block;
+      transform: skew(-2deg) rotate(-1deg);
+      background: linear-gradient(180deg, #ffd84a 0%, #ffb703 100%);
+      padding:6px 14px; border:4px solid #000; border-radius:14px;
+      box-shadow: var(--shadow);
+    }
+    .subtitle{
+      color:var(--muted); margin-top:6px; font-weight:700;
+      text-transform:uppercase; letter-spacing:.08em;
+    }
+
+    /* Grid de paneles tipo viñeta */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr)}
+
+    .card{
+      background:var(--panel);
+      color:var(--panel-ink);
+      border-radius:16px;
+      border:4px solid var(--panel-border);
+      padding:20px 18px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    /* Efecto “pegatina” y ligera rotación alterna */
+    .card::after{
+      content:"";
+      position:absolute; inset:auto 0 -12px auto; width:120px; height:28px;
+      background: repeating-linear-gradient(45deg, rgba(0,0,0,.14) 0 6px, transparent 6px 12px);
+      filter: blur(0.2px);
+      opacity:.25;
+      transform: rotate(-3deg);
+      pointer-events:none;
+    }
+    .grid .card:nth-child(odd){ transform: rotate(-0.3deg) }
+    .grid .card:nth-child(even){ transform: rotate(0.2deg) }
+
+    .span-4{grid-column: span 4}
+    .span-6{grid-column: span 6}
+    .span-8{grid-column: span 8}
+    .span-12{grid-column: span 12}
+
+    h2{
+      font-family: Bangers, Nunito, sans-serif;
+      font-size: 1.8rem; margin:0 0 12px;
+      color:#111;
+      display:inline-block;
+      padding:2px 10px;
+      border:3px solid #000; border-radius:10px;
+      background:linear-gradient(180deg, #5aa8ff 0%, #2f7ae5 100%);
+      box-shadow:0 4px 0 #000;
+      transform:skew(-2deg);
+    }
+    h3{
+      font-family: Bangers, Nunito, sans-serif;
+      font-size:1.35rem; margin:16px 0 8px; color:#111;
+      background:linear-gradient(180deg, #39e58c 0%, #1ebc72 100%);
+      display:inline-block; padding:2px 8px; border:3px solid #000; border-radius:8px; box-shadow:0 3px 0 #000;
+      transform:skew(-1.5deg);
+    }
+    p,li{color:#222; font-size:1rem}
+    ul{margin:8px 0 0 18px}
+
+    .tag{
+      display:inline-block; padding:.25rem .6rem; border-radius:999px;
+      background:#ffe66d; color:#111; font-weight:900; font-size:.85rem; margin-right:.4rem; border:3px solid #000;
+      box-shadow:0 2px 0 #000;
+    }
+
+    /* Paso a paso en estilo panel */
+    .flow{display:flex; flex-wrap:wrap; gap:12px; align-items:stretch; margin-top:8px}
+    .step{
+      flex:1 1 200px; background:#fff; border:3px solid #000; border-radius:14px; padding:12px;
+      box-shadow:0 6px 0 #000;
+      position:relative;
+    }
+    .step .n{font-weight:900; letter-spacing:.04em; color:#111; font-size:1rem}
+    .step .t{font-size:1rem}
+    .arrow{align-self:center; color:#ffe66d; font-size:26px; text-shadow:0 2px 0 #000}
+
+    /* Pills de modificadores (chips) */
+    .pill{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+      background:#fffbf0; border:3px solid #000; margin:6px 6px 0 0; font-size:1rem; color:#111;
+      box-shadow:0 4px 0 #000;
+    }
+    .pill svg{width:20px;height:20px}
+    /* Herencia de color para todos los SVG */
+    .pill svg, .pill svg *{
+      fill: currentColor !important;
+      stroke: currentColor !important;
+    }
+
+    /* Tabla estilo cómic */
+    .table{
+      width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:10px; border:3px solid #000;
+      background:#fff; box-shadow:0 6px 0 #000;
+    }
+    .table thead th{
+      background:#ffe66d; color:#111; font-weight:900; text-align:left; padding:10px 12px; border-bottom:3px solid #000; font-family:Bangers, Nunito, sans-serif; font-size:1.2rem; letter-spacing:.03em;
+    }
+    .table tbody td{padding:10px 12px; border-top:2px solid #111; color:#222; font-weight:700}
+    .table .right{text-align:right}
+    .table tbody tr:nth-child(even){ background:#fffaf0 }
+
+    /* Notas en bocadillo */
+    .note{
+      background:#ffffff; color:#111;
+      border:3px solid #000; padding:14px; border-radius:14px; position:relative;
+      box-shadow:0 6px 0 #000;
+    }
+    .note::after{
+      content:"";
+      position:absolute; left:26px; top:-18px; width:0; height:0;
+      border-left:14px solid transparent; border-right:14px solid transparent;
+      border-bottom:18px solid #ffffff;
+      filter: drop-shadow(0 -3px 0 #000);
+    }
+    .danger{color:#b30028}
+    .ok{color:#0b8f4c}
+    .warn{color:#b36b00}
+
+    .kbd{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:#fff; border:3px solid #000; padding:.15rem .45rem; border-radius:6px; color:#111; box-shadow:0 3px 0 #000
+    }
+
+    footer{color:#a7b4ff; margin:28px 0 40px; text-align:center}
+
+    /* Botón modo claro (opcional) */
+    .switch-btn {
+      background:#111; color:#ffed6a; border:3px solid #000;
+      padding: 10px 16px; margin-left:auto; border-radius:10px; font-size: 1rem; cursor: pointer;
+      box-shadow:0 4px 0 #000; transform:skew(-2deg);
+    }
+    .switch-btn:hover { filter: brightness(1.2) }
+
+    /* Mobile */
+    @media (max-width:900px){
+      .span-4,.span-6,.span-8,.span-12{grid-column:1/-1}
+      .flow{flex-direction:column}
+      header{flex-direction:column; align-items:flex-start}
+      .logo{transform:none}
+      .grid .card:nth-child(odd), .grid .card:nth-child(even){ transform:none }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true" title="Dado">
+        <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.2 6.8 3.8-6.8 3.8L5.2 6 12 4.2ZM5 8.5 11 12v8L5 16.5V8.5Zm14 0v8L13 20v-8l6-3.5Z"/></svg>
+      </div>
+      <div>
+        <h1>Infografía de Combate — YSystem</h1>
+        <div class="subtitle">Tiradas · Orden · Daño · Proezas — Estilo cómic</div>
+      </div>
+      <div>
+        <!-- Si tienes light.html en la raíz, deja este botón -->
+        <button onclick="window.location.href='light.html'" class="switch-btn">🌞 Modo Claro</button>
+      </div>
+    </header>
+
+    <!-- Flujo general -->
+    <section class="card span-12">
+      <h2>🔁 Flujo del combate</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="n">1 · Iniciativa</div>
+          <div class="t">Tira <span class="kbd">1D6 + DES + INT</span> por cada combatiente. Empates: DES → INT → PER → Agilidad → PJ más joven.</div>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="step">
+          <div class="n">2 · Orden</div>
+          <div class="t">Actúan de mayor a menor. Un turno ≈ <strong>5 s</strong>. 1 acción/turno (salvo acción extra).</div>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="step">
+          <div class="n">3 · Acción</div>
+          <div class="t">Atacar, defenderse, apuntar, inmovilizar, zafarse, huir… Aplica modificadores.</div>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="step">
+          <div class="n">4 · Impacto &amp; Daño</div>
+          <div class="t">Compara tiradas vs. Agilidad. Calcula daño y efectos (crítico/pifia).</div>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="step">
+          <div class="n">5 · Salud</div>
+          <div class="t">Resta Salud, revisa umbrales y penalizadores. ¿Consciente?</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">
+        <strong>⚠️ Sorpresa:</strong> el sorprendido pierde la iniciativa y en su primer turno no actúa (Agilidad/2).
+        <br><strong>🎲 6 natural en iniciativa:</strong> concede <em>1 acción extra</em> solo en el primer turno.
+      </p>
+    </section>
+
+    <section class="grid" style="margin-top:14px">
+      <!-- Acciones -->
+      <div class="card span-8">
+        <h2>🗡️ Acciones principales</h2>
+
+        <h3>Atacar</h3>
+        <ul>
+          <li><strong>Cuerpo a cuerpo:</strong> Lucha (DES) vs. Agilidad del defensor.</li>
+          <li><strong>A distancia:</strong> Puntería (PER) vs. Agilidad del defensor.</li>
+          <li><strong>Modificadores frecuentes:</strong>
+            <div class="pill" title="Apuntar">
+              <svg viewBox="0 0 24 24"><path d="M11 2h2v3a7 7 0 0 1 6 6h3v2h-3a7 7 0 0 1-6 6v3h-2v-3a7 7 0 0 1-6-6H2v-2h3a7 7 0 0 1 6-6V2Zm1 5a5 5 0 1 0 0 10A5 5 0 0 0 12 7Z"/></svg>
+              Apuntar: +1D (CQC) / +2D (dist.)
+            </div>
+            <div class="pill" title="Desenfundar/Cambio de arma">
+              <svg viewBox="0 0 24 24"><path d="M7 7h11v2H7v3L3 6l4-6v3Zm10 10H6v-2h11v-3l4 6-4 6v-3Z"/></svg>
+              Desenfundar o cambiar: −1D
+            </div>
+            <div class="pill" title="Ataques combinados">
+              <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm-7 8v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1Z"/></svg>
+              Combinados: +2/aliado (máx. +10)
+            </div>
+            <div class="pill" title="Ráfagas automáticas">
+              <svg viewBox="0 0 24 24"><path d="M4 11h6v2H4v-2Zm8-5h8v2h-8V6Zm0 10h8v2h-8v-2Zm-4-5h12v2H8v-2Z"/></svg>
+              Ráfaga: hasta 5 blancos; +2 Agilidad acumul.
+            </div>
+          </li>
+          <li><strong>Crítico:</strong> daño ×2 · <strong>Pifia:</strong> tropiezo/encasquille/pérdida de arma (a criterio de la mesa).</li>
+          <li><strong>Proezas:</strong> +1D a la tirada o +1D de daño (explosivo en 6). Límite recomendado: 2 (CQC) / 3 (dist.).</li>
+        </ul>
+
+        <h3>Defenderse completamente</h3>
+        <ul>
+          <li>Renuncias a atacar este turno.</li>
+          <li>Ganas <strong>+1D</strong> a tu Agilidad para evitar ataques.</li>
+          <li>En el siguiente turno, <em>subes 1 puesto</em> en la iniciativa.</li>
+        </ul>
+
+        <h3>Inmovilizar</h3>
+        <ul>
+          <li>Tirada: <strong>Lucha</strong> vs. <strong>Agilidad + 3</strong> del objetivo.</li>
+          <li>Si tienes éxito, el objetivo queda inmovilizado (Agilidad/2) y solo puede intentar <em>Zafarse</em>.</li>
+        </ul>
+
+        <h3>Zafarse</h3>
+        <ul>
+          <li>Tirada: <strong>Fuerza Bruta</strong> vs. <strong>Agilidad + 3</strong> del inmovilizador.</li>
+        </ul>
+
+        <h3>Huir</h3>
+        <ul>
+          <li>Te retiras del combate. El rival inmediato obtiene un <strong>ataque de oportunidad</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- Daño -->
+      <div class="card span-4">
+        <h2>💥 Daño orientativo</h2>
+        <table class="table" aria-label="Tabla de daño">
+          <thead>
+            <tr><th>Tipo de ataque</th><th class="right">Daño base</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sin armas</td><td class="right">1 + FUE/2</td></tr>
+            <tr><td>Arma CQC</td><td class="right">3 + FUE</td></tr>
+            <tr><td>Distancia (no fuego)</td><td class="right">3 + PER</td></tr>
+            <tr><td>Arma de fuego (corta)</td><td class="right">7 + PER</td></tr>
+            <tr><td>Arma de fuego (larga)</td><td class="right">10 + PER</td></tr>
+            <tr><td>Arma mortífera</td><td class="right">15 + PER</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px"><span class="ok">✔</span> Aplica <strong>Proezas</strong> para añadir <em>+1D de daño explosivo</em> (repite y suma en 6).</p>
+        <p><span class="warn">⚠</span> <strong>Crítico:</strong> multiplica el daño final ×2.</p>
+      </div>
+    </section>
+
+    <!-- Salud -->
+    <section class="grid" style="margin-top:14px">
+      <div class="card span-6">
+        <h2>❤️ Salud y umbrales</h2>
+        <ul>
+          <li><strong>Salud inicial:</strong> <span class="kbd">(FUE × 2) + 10 + 1D6</span>.</li>
+          <li><strong>Umbrales de Resistencia Física</strong> (RF = <span class="kbd">12 − FUE</span>): al descender por <span class="kbd">16, 11, 7, 4, 2</span> de Salud, tira <span class="kbd">3D6 ≤ RF</span>.
+            <br>· Fallo → <strong>Inconsciente</strong>. Éxito → sigues en pie.</li>
+          <li><strong>Penalizadores acumulativos</strong> al actuar:
+            <br>· Salud &lt; 11 → <span class="danger">−1D</span>
+            <br>· Salud &lt; 7  → <span class="danger">−2D</span>
+            <br>· Salud &lt; 4  → <span class="danger">−3D</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <h2>🎲 Gestión de Proezas</h2>
+        <ul>
+          <li><strong>Usos típicos:</strong> +1D a una tirada; +1D de daño (explosivo); efectos cinematográficos.</li>
+          <li><strong>Defensa heroica:</strong> permite anular un <em>crítico enemigo</em> (mesa: coste alto o todas tus Proezas).</li>
+          <li><strong>Límites sugeridos:</strong> máx. 2D extra (CQC) / 3D extra (distancia) por acción.</li>
+        </ul>
+        <p class="note">Consejo de mesa: acordad el tono (realista vs. pulp) para fijar cuánta “turbosuerte” permiten las Proezas.</p>
+      </div>
+    </section>
+
+    <!-- Mini ejemplos -->
+    <section class="card span-12" style="margin-top:14px">
+      <h2>🧩 Mini-ejemplos de cálculo</h2>
+      <ul>
+        <li><strong>Impacto CQC:</strong> <em>Ataque</em> (Lucha = 3D + DES) vs. <em>Defensa</em> (Agilidad del rival). Si el atacante ≥ defensa, impacta.</li>
+        <li><strong>Daño CQC:</strong> (3 + FUE) + <em>bonos</em> (p. ej., +1D de Proeza, explota en 6). Crítico = ×2 al final.</li>
+        <li><strong>Ráfaga:</strong> distribuye hasta 5 impactos; cada blanco adicional aumenta su Agilidad en +2 para evitar la bala.</li>
+        <li><strong>Desenfundar:</strong> si además atacas, aplica −1D a tu tirada de ataque ese turno.</li>
+      </ul>
+    </section>
+
+    <!-- Accesos rápidos -->
+    <section class="grid" style="margin-top:14px">
+      <div class="card span-4">
+        <h2>⚙️ Turno rápido</h2>
+        <p><span class="tag">1</span> Iniciativa → <span class="tag">2</span> Acción → <span class="tag">3</span> Impacto → <span class="tag">4</span> Daño → <span class="tag">5</span> Salud/Umbral</p>
+      </div>
+      <div class="card span-4">
+        <h2>🛡️ Defensa total</h2>
+        <p>+1D Agilidad este turno, sube 1 puesto en iniciativa el siguiente.</p>
+      </div>
+      <div class="card span-4">
+        <h2>📎 Recordatorios</h2>
+        <ul>
+          <li>Turno ≈ 5 s.</li>
+          <li>1 acción/turno (salvo extra por 6 en iniciativa).</li>
+          <li>Apuntar: +1D CQC / +2D dist.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      Infografía no oficial para uso en mesa — YSystem · Diseño cartoon listo para impresión (A4/A3) y pantalla.
+    </footer>
+  </div>
+</body>
+</html>
